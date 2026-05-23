@@ -22,4 +22,12 @@ describe('Cart', () => {
     render(<Cart items={seededCart} />);
     expect(screen.getByTestId('cart-total')).toHaveTextContent(formatUSD(calculateTotal(seededCart)));
   });
+
+  it('renders the info icon at the same size as other icons (16px default)', () => {
+    const { container } = render(<Cart items={seededCart} />);
+    const infoIcon = container.querySelector('svg.info-icon');
+    expect(infoIcon).toBeInTheDocument();
+    expect(infoIcon?.getAttribute('width')).toBe('16');
+    expect(infoIcon?.getAttribute('height')).toBe('16');
+  });
 });

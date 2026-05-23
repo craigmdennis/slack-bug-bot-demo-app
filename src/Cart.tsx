@@ -48,7 +48,7 @@ export function Cart({ items }: { items: CartItem[] }) {
           <span className="shipping-label">
             Shipping
             <Tooltip text="TODO: add shipping tooltip">
-              <Icon name="info" size={36} className="info-icon" />
+              <Icon name="info" className="info-icon" />
             </Tooltip>
           </span>
           <span>{formatUSD(shipping)}</span>
