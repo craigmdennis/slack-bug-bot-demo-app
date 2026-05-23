@@ -30,4 +30,9 @@ describe('Cart', () => {
     expect(infoIcon?.getAttribute('width')).toBe('16');
     expect(infoIcon?.getAttribute('height')).toBe('16');
   });
+
+  it('shipping tooltip says "Usually dispatched within 24 hours"', () => {
+    render(<Cart items={seededCart} />);
+    expect(screen.getByRole('tooltip')).toHaveTextContent('Usually dispatched within 24 hours');
+  });
 });
